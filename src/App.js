@@ -8,12 +8,22 @@ import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import { useCallback, useRef, useState } from "react";
+import "../node_modules/video-react/dist/video-react.css";
+import datasetVideo from "./assets/BW_2.mp4";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
+import { Player } from "video-react";
 
 import Webcam from "react-webcam";
 
 import MenuIcon from "@mui/icons-material/Menu";
+import backWatching from "./assets/BW.png";
+import backWatching1 from "./assets/BW_1.png";
+import backWatching3 from "./assets/BW_3.png";
+import frontWatching from "./assets/FW.png";
+import mobileWatching1 from "./assets/MW_1.png";
+import sideWatching from "./assets/S_W__1.png";
+
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Paper from "@mui/material/Paper";
@@ -119,6 +129,7 @@ export default function App() {
     aspectRatio: 0.6666666667,
     facingMode: "user",
   };
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -224,13 +235,15 @@ export default function App() {
               alignItems: "center",
             }}
           >
-            <Webcam
+            {/* <Webcam
               ref={webcamRef}
               audio={false}
               mirrored={true}
               screenshotFormat="image/jpeg"
               videoConstraints={videoConstraints}
-            />
+            /> */}
+
+            <img src={frontWatching} alt="img" />
           </Paper>
         </Box>
 
@@ -281,13 +294,70 @@ export default function App() {
         </Box>
 
         <Grid mt={5} container gap={3}>
-          {suspiciousScreenShots.map((camera) => (
+          {/* {suspiciousScreenShots.map((camera) => (
             <Grid item xs={3}>
               <Paper elevation={3}>
                 <img src={camera} alt="camera" width="100%" />
               </Paper>
             </Grid>
-          ))}
+          ))} */}
+
+          <Grid item xs={3}>
+            <Paper elevation={3}>
+              <img src={backWatching} alt="camera" width="100%" />
+              <Typography variant="5" color="initial">
+                Back Watching
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper elevation={3}>
+              <img src={backWatching1} alt="camera" width="100%" />
+              <Typography variant="5" color="initial">
+                Back Watching
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper elevation={3}>
+              <img src={backWatching3} alt="camera" width="100%" />
+              <Typography variant="5" color="initial">
+                Back Watching
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper elevation={3}>
+              <img src={frontWatching} alt="camera" width="100%" />
+              <Typography variant="5" color="initial">
+                Front Watching
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper elevation={3}>
+              <img src={mobileWatching1} alt="camera" width="100%" />
+              <Typography variant="5" color="initial">
+                Mobile Watching
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper elevation={3}>
+              <img src={sideWatching} alt="camera" width="100%" />
+              <Typography variant="5" color="initial">
+                Side Watching
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper elevation={3}>
+              <img src={backWatching} alt="camera" width="100%" />
+              <Typography variant="5" color="initial">
+                Back Watching
+              </Typography>
+            </Paper>
+          </Grid>
         </Grid>
       </Box>
     </Box>
